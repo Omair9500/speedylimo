@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:speedylimo/extensions/colors/colors_extension.dart';
-import 'package:speedylimo/presentation/presentation.dart';
-import 'package:speedylimo/presentation/widgets/appbarWidget/appbar_widget.dart';
-import 'package:speedylimo/presentation/widgets/proFile/proFileWidget.dart';
-import 'package:speedylimo/utils/constants/app/app_constants.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:speedylimo/extensions/extension.dart';
+import '../../../../../business_logic/bussiness.logic.dart';
+import '/extensions/colors/colors_extension.dart';
+import '/presentation/presentation.dart';
+import '/utils/constants/app/app_constants.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -13,8 +14,24 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  TextEditingController nameController = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    nameController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final data = context.read<UserCubit>().state.userData?.user;
+    nameController.text = data?.name ?? '';
+
     return Scaffold(
         endDrawer: NavDrawer(context),
         appBar: const PreferredSize(
@@ -46,7 +63,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         ProfileWidget(
                           color: Colors.grey,
-                          imagePath: "lib/assets/icons/login.png",
+                          imagePath: 'login'.png,
                           icon: const Icon(
                             Icons.camera_alt,
                             color: Colors.black,
@@ -58,17 +75,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const TextFieldWidget(
-                          hint: "Enter Your Name",
+                        TextFieldWidget(
+                          hint: 'Enter Your Name',
                           labelText: 'Enter Your Name',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
+                          controller: nameController,
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         const TextFieldWidget(
-                          hint: "Enter Email@ address",
+                          hint: 'Enter Email@ address',
                           labelText: 'Enter Email',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
@@ -77,7 +95,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 10,
                         ),
                         const TextFieldWidget(
-                          hint: "Enter Your Phone Number(Optional)",
+                          hint: 'Enter Your Phone Number(Optional)',
                           labelText: 'Enter Your Phone Number',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
@@ -86,7 +104,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 10,
                         ),
                         const TextFieldWidget(
-                          hint: "Enter Your Account Number",
+                          hint: 'Enter Your Account Number',
                           labelText: 'Enter Your Account Number',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
@@ -95,7 +113,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 10,
                         ),
                         const TextFieldWidget(
-                          hint: "Enter Your Bank Name",
+                          hint: 'Enter Your Bank Name',
                           labelText: 'Enter Your Bank Name',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
@@ -104,7 +122,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 10,
                         ),
                         const TextFieldWidget(
-                          hint: "Enter Your Branch Name",
+                          hint: 'Enter Your Branch Name',
                           labelText: 'Enter Your Branch Name',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
@@ -114,7 +132,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         ButtonWidget(
                             childWidget: const Text(
-                              "Update",
+                              'Update',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

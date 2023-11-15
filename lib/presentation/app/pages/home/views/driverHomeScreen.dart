@@ -33,11 +33,10 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        endDrawer: NavDrawer(context),
         appBar: PreferredSize(
             preferredSize: const Size.fromHeight(80),
             child: AppBarWidget(
-              isshow: true,
+              isshow: false,
               showback: false,
               title: false,
               titlename: '',

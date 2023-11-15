@@ -23,6 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+
     _sharedPrefs.isUserSignedIn().then(
       (value) {
         _isUserSignedIn = value;

@@ -33,7 +33,7 @@ class _PassengerHomeScreenState extends State<PassengerHomeScreen> {
               showback: false,
               title: false,
               titlename: '',
-              name: context.read<UserCubit>().state.update_name ?? '',
+              name: '',
             )),
         body: SingleChildScrollView(
           child: Padding(
