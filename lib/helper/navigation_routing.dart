@@ -12,7 +12,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const SplashScreen());
     case loginRoute:
       return MaterialPageRoute(builder: (context) => LoginScreen());
-    case homeRoute1:
+    case bottomBarRoute:
       return MaterialPageRoute(
           builder: (context) => const BttomNavigationScreen());
     case forgotPasswordRoute:

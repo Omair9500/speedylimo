@@ -13,21 +13,21 @@ class AuthenticationAPI {
     }
   }
 
-  Future<dynamic> changePassword({required body}) async {
-    try {
-      return await HTTP.instance
-          .iPost(ApiRoutes.changePassword_Url, data: body);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  // Future<dynamic> changePassword({required body}) async {
+  //   try {
+  //     return await HTTP.instance
+  //         .iPost(ApiRoutes.changePassword_Url, data: body);
+  //   } catch (e) {
+  //     rethrow;
+  //   }
+  // }
 
-  Future<dynamic> forgotPassword({required body}) async {
-    try {
-      return await HTTP.instance
-          .iPost(ApiRoutes.forgotPassword_Url, data: body);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  // Future<dynamic> forgotPassword({required body}) async {
+  //   try {
+  //     return await HTTP.instance
+  //         .iPost(ApiRoutes.forgotPassword_Url, data: body);
+  //   } catch (e) {
+  //     rethrow;
+  //   }
+  // }
 }

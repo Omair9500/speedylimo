@@ -28,7 +28,7 @@ class _CompleteRidesScreenState extends State<CompleteRidesScreen> {
             preferredSize: const Size.fromHeight(80),
             child: AppBarWidget(
               isshow: true,
-              showback: false,
+              showback: true,
               title: false,
               titlename: '',
               name: context.read<UserCubit>().state.update_name ?? '',

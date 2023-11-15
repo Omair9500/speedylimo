@@ -18,7 +18,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   bool _isUserSignedIn = false;
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   SharedPrefs _sharedPrefs = SharedPrefs();
   @override
   void initState() {
@@ -27,9 +27,13 @@ class _SplashScreenState extends State<SplashScreen>
       (value) {
         _isUserSignedIn = value;
         setState(() {
-          Future.delayed(const Duration(seconds: 2), () {
-            NavigationService.instance.navigateTo(loginRoute);
-          });
+          _isUserSignedIn == false
+              ? Future.delayed(Duration(seconds: 2), () {
+                  NavigationService.instance.navigateTo(loginRoute);
+                })
+              : Future.delayed(Duration(seconds: 2), () {
+                  NavigationService.instance.pushAndRemoveUntil(bottomBarRoute);
+                });
         });
       },
     );

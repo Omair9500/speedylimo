@@ -70,7 +70,7 @@ packages:
       name: connectivity_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.0.1"
+    version: "3.0.3"
   connectivity_plus_platform_interface:
     dependency: transitive
     description:
@@ -190,27 +190,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.3"
-  firebase_core:
-    dependency: "direct main"
-    description:
-      name: firebase_core
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.20.0"
-  firebase_core_platform_interface:
-    dependency: transitive
-    description:
-      name: firebase_core_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "5.0.0"
-  firebase_core_web:
-    dependency: transitive
-    description:
-      name: firebase_core_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.8.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -302,7 +281,7 @@ packages:
       name: formz
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.1"
+    version: "0.4.1"
   hive:
     dependency: transitive
     description:
@@ -785,5 +764,5 @@ packages:
     source: hosted
     version: "6.1.0"
 sdks:
-  dart: ">=2.18.4 <3.0.0"
+  dart: ">=2.18.2 <3.0.0"
   flutter: ">=3.3.0"

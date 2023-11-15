@@ -44,30 +44,10 @@ class _MyAppState extends State<MyApp> {
       value: widget.authenticationRepository,
       child: MultiBlocProvider(
         providers: [
-          // BlocProvider(
-          //     create: (context) => LoginCubit(widget.authenticationRepository)),
+          BlocProvider(
+              create: (context) => LoginCubit(widget.authenticationRepository)),
           BlocProvider(create: (context) => ThemeCubit()),
-          // BlocProvider(create: (context) => RevenueCubit()),
-          // BlocProvider(create: (context) => OpDetailCubit()),
-          BlocProvider(create: (context) => IpDetailCubit()),
           BlocProvider(create: (context) => UserCubit()),
-          // BlocProvider(create: (context) => MonthlyCubit()),
-          // BlocProvider(create: (context) => YearlyCubit()),
-          BlocProvider(create: (context) => LogoutCubit()),
-          // BlocProvider(create: (context) => BudgetCubit()),
-          // BlocProvider(create: (context) => CurrentCubit()),
-          // BlocProvider(create: (context) => FinanciaCubit()),
-          // BlocProvider(create: (context) => QuaterlyComparisonCubit()),
-          // BlocProvider(create: (context) => MonthlyComparisonCubit()),
-          // BlocProvider(create: (context) => YearlyComparisonCubit()),
-          // BlocProvider(
-          //     create: (context) => ChangePasswordCubit(
-          //           widget.authenticationRepository,
-          //         )),
-          // BlocProvider(
-          //     create: (context) => ForgotPasswordCubit(
-          //           widget.authenticationRepository,
-          //         )),
           BlocProvider(
               create: (context) => InternetCubit(connectivity: Connectivity())),
         ],

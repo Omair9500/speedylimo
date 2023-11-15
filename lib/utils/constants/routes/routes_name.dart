@@ -1,5 +1,5 @@
 const String homeRoute = 'HomeRoute';
-const String homeRoute1 = 'HomeWidget';
+const String bottomBarRoute = 'bottomBarRoute';
 const String splashRoute = 'SplashRoute';
 const String loginRoute = 'LoginRoute';
 const String bookNow = 'BookNow';

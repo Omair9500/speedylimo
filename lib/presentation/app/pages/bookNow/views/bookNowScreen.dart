@@ -56,12 +56,13 @@ class _BookinNowSceenState extends State<BookinNowSceen> {
             expandedHeight: 200.0,
             pinned: true,
             leading: IconButton(
-                icon: const Icon(
-                  Icons.filter_1,
-                  color: Colors.transparent,
+                icon: Icon(
+                  Icons.arrow_circle_left,
+                  size: 30,
+                  color: Colors.black,
                 ),
                 onPressed: () {
-                  // Do something
+                  NavigationService.instance.goBack();
                 }),
             floating: true,
             // snap: true,

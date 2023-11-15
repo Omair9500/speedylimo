@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:speedylimo/extensions/extension.dart';
-import '../../../utils/constants/app/app_constants.dart';
+import '/utils/constants/app/app_constants.dart';
+import '/utils/utils.dart';
 
 class AppBarWidget extends StatefulWidget {
   final bool isshow;
@@ -74,11 +75,15 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: const Center(
-                                  child: Icon(
-                                Icons.arrow_circle_left,
-                                size: 35,
-                              ))),
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 15.0),
+                                child: const Center(
+                                    child: Icon(
+                                  Icons.arrow_circle_left,
+                                  size: 30,
+                                  color: Colors.black,
+                                )),
+                              )),
                         )
                       : Container(),
                   const SizedBox(
