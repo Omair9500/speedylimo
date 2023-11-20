@@ -255,7 +255,7 @@ class _CareerScreenState extends State<CareerScreen> {
                           const SizedBox(
                             height: 10,
                           ),
-                          const DatePickerWidget(),
+                          //  DatePickerWidget(),
                           const SizedBox(
                             height: 10,
                           ),
@@ -275,7 +275,7 @@ class _CareerScreenState extends State<CareerScreen> {
                           const SizedBox(
                             height: 10,
                           ),
-                          const DatePickerWidget(),
+                          // const DatePickerWidget(),
                           const SizedBox(
                             height: 10,
                           ),
@@ -295,7 +295,7 @@ class _CareerScreenState extends State<CareerScreen> {
                           const SizedBox(
                             height: 10,
                           ),
-                          const DatePickerWidget(),
+                          // const DatePickerWidget(),
                           const SizedBox(
                             height: 10,
                           ),
@@ -315,7 +315,7 @@ class _CareerScreenState extends State<CareerScreen> {
                           const SizedBox(
                             height: 10,
                           ),
-                          const DatePickerWidget(),
+                          // const DatePickerWidget(),
                           const SizedBox(
                             height: 10,
                           ),
@@ -335,7 +335,7 @@ class _CareerScreenState extends State<CareerScreen> {
                           const SizedBox(
                             height: 10,
                           ),
-                          const DatePickerWidget(),
+                          // const DatePickerWidget(),
                           const SizedBox(
                             height: 10,
                           ),

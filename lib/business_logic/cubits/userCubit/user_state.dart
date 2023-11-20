@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
+import '../../../presentation/app/app.dart';
 import '/data/data.dart';
 
 class UserState extends Equatable {
@@ -13,6 +14,7 @@ class UserState extends Equatable {
       this.phoneNo,
       this.userData,
       this.username,
+      this.pickResult,
       this.photo});
 
   final String? update_name;
@@ -20,8 +22,10 @@ class UserState extends Equatable {
   final String? designation;
   final String? phoneNo;
   final String? username;
+
   var photo;
   final UserData? userData;
+  final PickResult? pickResult;
 
   final String? email;
 
@@ -35,6 +39,7 @@ class UserState extends Equatable {
         username,
         phoneNo,
         userData,
+        pickResult,
       ];
 
   UserState copyWith(
@@ -43,7 +48,10 @@ class UserState extends Equatable {
       String? designation,
       String? username,
       String? phoneNo,
+      dynamic fromLocation,
+      dynamic toLocation,
       UserData? userData,
+      PickResult? pickResult,
       var photo,
       String? email}) {
     return UserState(
@@ -54,6 +62,7 @@ class UserState extends Equatable {
         userData: userData ?? this.userData,
         phoneNo: phoneNo ?? this.phoneNo,
         username: username ?? this.username,
+        pickResult: pickResult ?? this.pickResult,
         doctorId: doctorId ?? this.doctorId);
   }
 

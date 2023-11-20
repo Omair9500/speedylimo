@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:speedylimo/extensions/extension.dart';
+import 'package:speedylimo/utils/constants/app/app_constants.dart';
 import '../../../../../business_logic/bussiness.logic.dart';
-import '/extensions/colors/colors_extension.dart';
 import '/presentation/presentation.dart';
-import '/utils/constants/app/app_constants.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  ProfileScreen({super.key});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -15,6 +14,11 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController accountController = TextEditingController();
+  TextEditingController bankController = TextEditingController();
+  TextEditingController branchController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -31,10 +35,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final data = context.read<UserCubit>().state.userData?.user;
     nameController.text = data?.name ?? '';
+    emailController.text = data?.email ?? '';
+    phoneController.text = data?.phoneNumber ?? '';
 
     return Scaffold(
         endDrawer: NavDrawer(context),
-        appBar: const PreferredSize(
+        appBar: PreferredSize(
             preferredSize: Size.fromHeight(80),
             child: AppBarWidget(
               isshow: true,
@@ -45,10 +51,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             )),
         body: SingleChildScrollView(
             child: Padding(
-                padding: const EdgeInsets.all(14.0),
+                padding: EdgeInsets.all(14.0),
                 child: Container(
-                    margin: const EdgeInsets.all(15.0),
-                    padding: const EdgeInsets.all(20),
+                    margin: EdgeInsets.all(15.0),
+                    padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: tempColor.lightGreyColor,
@@ -64,7 +70,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ProfileWidget(
                           color: Colors.grey,
                           imagePath: 'login'.png,
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.camera_alt,
                             color: Colors.black,
                             size: 25.0,
@@ -72,7 +78,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           iconBackgroundColor: Colors.white,
                           onPressed: () {},
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 20,
                         ),
                         TextFieldWidget(
@@ -82,57 +88,59 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           labelStyle: TextStyle(color: Colors.black),
                           controller: nameController,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 10,
                         ),
-                        const TextFieldWidget(
+                        TextFieldWidget(
+                          controller: emailController,
                           hint: 'Enter Email@ address',
                           labelText: 'Enter Email',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 10,
                         ),
-                        const TextFieldWidget(
+                        TextFieldWidget(
+                          controller: phoneController,
                           hint: 'Enter Your Phone Number(Optional)',
                           labelText: 'Enter Your Phone Number',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 10,
                         ),
-                        const TextFieldWidget(
+                        TextFieldWidget(
                           hint: 'Enter Your Account Number',
                           labelText: 'Enter Your Account Number',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 10,
                         ),
-                        const TextFieldWidget(
+                        TextFieldWidget(
                           hint: 'Enter Your Bank Name',
                           labelText: 'Enter Your Bank Name',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 10,
                         ),
-                        const TextFieldWidget(
+                        TextFieldWidget(
                           hint: 'Enter Your Branch Name',
                           labelText: 'Enter Your Branch Name',
                           validatation: true,
                           labelStyle: TextStyle(color: Colors.black),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 10,
                         ),
                         ButtonWidget(
-                            childWidget: const Text(
-                              'Update',
+                            childWidget: Text(
+                              'Update'.toUpperCase(),
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

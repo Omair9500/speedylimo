@@ -12,6 +12,9 @@ import 'utils/utils.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (defaultTargetPlatform == TargetPlatform.android) {
+    AndroidGoogleMapsFlutter.useAndroidViewSurface = true;
+  }
 
   final storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
@@ -23,6 +26,10 @@ void main() async {
     () => runApp(MyApp(authenticationRepository: AuthenticationRepository())),
     storage: storage,
   );
+}
+
+mixin AndroidGoogleMapsFlutter {
+  static bool? useAndroidViewSurface;
 }
 
 class MyApp extends StatefulWidget {

@@ -37,6 +37,19 @@ class AuthenticationRepository {
     }
   }
 
+  Future<UserModel> RegisterPassenger({
+    required dynamic body,
+  }) async {
+    try {
+      var data = await _authenticationAPI?.registerPassenger(body: body);
+      appUser = UserModel.fromMap(data);
+
+      return appUser!;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   // Future<ChangePasswordModel> changePassword({
   //   required dynamic body,
   // }) async {

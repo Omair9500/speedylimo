@@ -13,6 +13,14 @@ class AuthenticationAPI {
     }
   }
 
+  Future<dynamic> registerPassenger({required body}) async {
+    try {
+      return await http.iPost(ApiRoutes.registerPassengerUrl, data: body);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   // Future<dynamic> changePassword({required body}) async {
   //   try {
   //     return await HTTP.instance

@@ -47,6 +47,20 @@ class _BookinNowSceenState extends State<BookinNowSceen> {
   bool color = true;
   bool isChecked = false;
   List<Widget> containers = [];
+  var selectedTime = TimeOfDay.now();
+
+  Future<void> _selectTime(BuildContext context) async {
+    final picked = await showTimePicker(
+      context: context,
+      initialTime: selectedTime,
+    );
+    if (picked != null && picked != selectedTime) {
+      setState(() {
+        selectedTime = picked;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -190,11 +204,15 @@ class _BookinNowSceenState extends State<BookinNowSceen> {
                               height: 40,
                               width: 120,
                               color: const Color(0xff585858),
-                              child: const TimePickerWidget(
+                              child: TimePickerWidget(
                                 fillColor: Color(0xff585858),
                                 textColor: Colors.white,
                                 borderColor: Color(0xff585858),
                                 size: 18,
+                                selecTime: selectedTime,
+                                onSelected: () async {
+                                  await _selectTime(context);
+                                },
                               ),
                             ),
                           ],
@@ -438,11 +456,15 @@ class _BookinNowSceenState extends State<BookinNowSceen> {
                                           height: 30,
                                           width: 120,
                                           color: const Color(0xff585858),
-                                          child: const TimePickerWidget(
+                                          child: TimePickerWidget(
                                             fillColor: Color(0xff585858),
                                             textColor: Colors.white,
                                             borderColor: Color(0xff585858),
                                             size: 18,
+                                            selecTime: selectedTime,
+                                            onSelected: () async {
+                                              await _selectTime(context);
+                                            },
                                           ),
                                         ),
                                       ],
@@ -473,11 +495,15 @@ class _BookinNowSceenState extends State<BookinNowSceen> {
                                           height: 30,
                                           width: 120,
                                           color: const Color(0xff585858),
-                                          child: const TimePickerWidget(
+                                          child: TimePickerWidget(
                                             fillColor: Color(0xff585858),
                                             textColor: Colors.white,
                                             borderColor: Color(0xff585858),
                                             size: 18,
+                                            selecTime: selectedTime,
+                                            onSelected: () async {
+                                              await _selectTime(context);
+                                            },
                                           ),
                                         ),
                                       ],
